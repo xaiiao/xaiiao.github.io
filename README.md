@@ -9,6 +9,14 @@ PROG 101 Portfolio
 *🥮
 *🤎
 
-Project 1: Adopt a Fish
-Project 2: Adventure Game
-Project 3: Herbs of Snow XAML
+Adopt a Fish
+Description brief general description of the project
+
+
+Adventure Game
+
+
+Herbs of Snow XAML
+
+Cumulative Verse Song
+Alphanumeric Characters and Loops
