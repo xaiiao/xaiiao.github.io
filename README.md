@@ -46,7 +46,7 @@ Game Art student at Columbia College Chicago.
 ## 🧸 Minor Projects
 - Cumulative Verse Song
   -   
-  <img src="https://media.discordapp.net/attachments/567073748935639045/1375298473712423012/image.png?ex=68312e03&is=682fdc83&hm=32f554b3eb967cccfc54d7e952b54f4b0da3e3f532d05491bfaee1764ee8cbb8&=&format=webp&quality=lossless&width=1555&height=810">
+    <img src ="https://media.discordapp.net/attachments/567073748935639045/1375302530120155298/image.png?ex=683131cb&is=682fe04b&hm=ac5846069d4dcc9773bc4c4a87598ec86c6e1ba891442eaebeb57dd773309d09&=&format=webp&quality=lossless&width=1860&height=305">
 
     **Public domain cumulative verse song**
 
