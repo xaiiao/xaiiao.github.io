@@ -1,0 +1,167 @@
+:root {
+	--pink: #FF6F91;
+	--green: #6BFFB1;
+	--hoverblue: #66B3B0;
+	--yellow: #FFEB3B;
+	--cloud: #F7F7F7;
+	--volcano: #2B2B2B;
+}
+
+body{
+	margin:0px;
+	display: flex;
+	flex-direction: column;	
+}
+
+#Navbar {
+	background: var(--cloud);
+	margin: 0px;
+
+	header {
+		display: flex;
+		justify-content: space-around;
+	}
+
+	.navbar {
+		padding: 14px 16px;
+		overflow: hidden;
+		font-family: NSimSun;
+	}
+		/* Links inside the navbar */
+		.navbar a {
+			float: left;
+			font-size: 16px;
+			color: var(--volcano);
+			text-align: center;
+			padding: 14px 16px;
+			text-decoration: none;
+		}
+	/* The dropdown container */
+	.dropdown {
+		float: left;
+		overflow: hidden;
+		padding: 3px;
+	}
+		/* Dropdown button */
+		.dropdown .dropbtn {
+			border: none;
+			outline: none;
+			color: var(--volcano);
+			background-color: inherit;
+			font-family: inherit; 
+			align-content: center;
+			/* Important for vertical align on mobile phones */
+		}
+
+	/* Add a red background color to navbar links on hover */
+		.navbar a:hover, .dropdown:hover .dropbtn {
+			background-color: var(--hoverblue);
+		}
+
+	/* Dropdown content (hidden by default) */
+	.dropdown-content {
+		display: none;
+		position: absolute;
+		background-color: var(--cloud);
+		min-width: 160px;
+		box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+		z-index: 1;
+	}
+		/* Links inside the dropdown */
+		.dropdown-content a {
+			float: none;
+			color: black;
+			text-decoration: none;
+			display: block;
+			text-align: left;
+		}
+			/* Add a grey background color to dropdown links on hover */
+			.dropdown-content a:hover {
+				background-color: #ddd;
+			}
+	/* Show the dropdown menu on hover */
+	.dropdown:hover .dropdown-content {
+		display: block;
+	}
+
+	.fa {
+		padding: 15px;
+		font-size: 15px;
+		text-align: center;
+	}
+		/* Add a hover effect if you want */
+		.fa:hover {
+			opacity: 0.7;
+		}
+}
+
+
+/* Social Icons */
+ul {
+  list-style-type: none;
+  margin: 7px;
+  padding: 7px;
+  background-color: var(--cloud);
+  display: flex;
+}
+
+header ul {
+	align-content: center;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+header ul a {
+	padding: 5px 5px;
+	display: block;
+}
+
+header ul a:hover{
+	color: var(--hoverblue);
+}
+
+ul li a {
+  display: block;
+  color: var(--volcano);
+  padding: 14px 16px;
+}
+
+ul li a:hover {
+  background-color:var(--volcano);
+}
+
+#Home{
+	margin:0px;	
+}
+
+#Voiceover {
+	/*	background: var(--green); */
+	font-family: NSimSun;
+}
+
+#Illustration {
+	font-family: NSimSun;
+}
+
+#Contact {
+	font-family: NSimSun;
+}
+
+
+
+
+
+
+
+
+section {
+	background-color: #FF6F91;
+	display: flex;
+	flex-direction: row;
+	
+}
+
+audio{
+	display: block;
+}
