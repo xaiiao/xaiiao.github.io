@@ -1,10 +1,10 @@
 :root {
-	--pink: #FF6F91;
-	--green: #6BFFB1;
+	--pink: #DF315C;
+	--green: #B5F682;
 	--hoverblue: #66B3B0;
-	--yellow: #FFEB3B;
-	--cloud: #F7F7F7;
-	--volcano: #2B2B2B;
+	--yellow: #F4DF9A;
+	--cloud: #FFF9F5;
+	--volcano: #3B2F31;
 }
 
 body{
@@ -25,7 +25,7 @@ body{
 	.navbar {
 		padding: 14px 16px;
 		overflow: hidden;
-		font-family: NSimSun;
+		font-family: Verdana, Tahoma, sans-serif;
 	}
 		/* Links inside the navbar */
 		.navbar a {
@@ -92,7 +92,7 @@ body{
 			opacity: 0.7;
 		}
 }
-
+*/
 
 /* Social Icons */
 ul {
@@ -138,24 +138,22 @@ ul li a:hover {
 
 .text-container {
 	position: absolute;
-	color: rgb(255, 255, 255);
+	color: var(--pink);
 	left: 20%;
-	top: 20%;
+	top: 15%;
 	transform: translate(-50%, -80%);
-	background-color: rgba(41, 41, 41, 0.8);
 	padding: 0.5rem;
 	text-align: center;
-	font-size: 16px;
+	
 }
 
-}
 	
 #Voiceover {
 		}
 
 	p {
-		font-family: NSimSun;
-		color: white;
+		font-family: Verdana, Tahoma, sans-serif;
+		color: var(--cloud);
 	}
 		.audio-demos {
 			max-width: 500px;
@@ -218,19 +216,11 @@ ul li a:hover {
 		}
 }
 
-#Illustration {
-	font-family: NSimSun;
-}
+
 
 #Contact {
-	font-family: NSimSun;
+		font-family: Verdana, Tahoma, sans-serif;
 }
-
-
-
-
-
-
 
 
 section {
