@@ -10,7 +10,7 @@
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
 	<script src="https://kit.fontawesome.com/dbde5275af.js" crossorigin="anonymous"></script>
 </head>
 
@@ -20,151 +20,155 @@
 
 	<div class='top__gridContainer'>
 		<div id="Navbar">
-
 			<header>
-
 				<ul>
-					<a href="https://www.linkedin.com/in/taika-clark/" target="_blank" rel="noopener"><i class="fa fa-linkedin"></i></a>
+					<a href="https://www.linkedin.com/in/taika-clark/" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin"></i></a>
 					<a href="https://www.artstation.com/xaiiao/" target="_blank" rel="noopener"><i class="fa-brands fa-artstation"></i></a>
 				</ul>
 
-				<div class="navbar">
+				<nav class="navbar">
 					<a href="#Home">Home</a>
 					<a href="#Voiceover">Voiceover</a>
 					<a href="#Contact">Contact</a>
-				</div>
+				</nav>
 			</header>
-
 		</div>
-
 
 		<div id="Home">
 			<img src="img/website bg.jpg" style="max-width:100%;height:auto;" alt="Illustration goes here">
 			<div class="text-container">
 				<h1>Taika Clark</h1>
-				<h3> Game Art & VO </h3>
+				<h3>Game Art & VO</h3>
 			</div>
-
-	<div class="top-band">
-		<p></p>
-	</div>
-
-
-			<div id="Voiceover">
-				<h3> Voiceover </h3>
-				<section class="audio-demos">
-					<div class="audio-item">
-						<div class="audio-controls">
-							<p>Commercial</p>
-							<button class="play-btn" data-src="audio/TaikaClark_Greg.mp3">
-								<i class="fa fa-play"></i>
-							</button>
-							<a href="audio/TaikaClark_Greg.mp3" download title="Download" class="download-btn">
-								<i class="fa fa-download"></i>
-							</a>
-						</div>
-						<audio src="audio/TaikaClark_Greg.mp3" preload="none"></audio>
-					</div>
-				</section>
-				<audio controls>
-					<source src="audio/TaikaClark_Greg.mp3" type="audio/mp3">
-
-					<script>
-						document.addEventListener('DOMContentLoaded', function () {
-							const playBtns = document.querySelectorAll('.play-btn');
-							const audios = document.querySelectorAll('.audio-item audio');
-							playBtns.forEach((btn, idx) => {
-								btn.addEventListener('click', () => {
-									audios.forEach((audio, aidx) => {
-										if (aidx !== idx) {
-											audio.pause();
-											audio.currentTime = 0;
-											playBtns[aidx].querySelector('i').classList.remove('fa-pause');
-											playBtns[aidx].querySelector('i').classList.add('fa-play');
-										}
-									});
-
-									const audio = audios[idx];
-									if (audio.paused || audio.ended) {
-										audio.play();
-										btn.querySelector('i').classList.remove('fa-play');
-										btn.querySelector('i').classList.add('fa-pause');
-									} else {
-										audio.pause();
-										btn.querySelector('i').classList.remove('fa-pause');
-										btn.querySelector('i').classList.add('fa-play');
-									}
-								});
-
-								audios[idx].addEventListener('ended', () => {
-									btn.querySelector('i').classList.remove('fa-pause');
-									btn.querySelector('i').classList.add('fa-play');
-								});
-							});
-						});
-					</script>
-			</div>
-
 		</div>
-<div>
 
-				<div class="bottom-band">
-		<p></p>
-	</div>
+		<div class="top-band"></div>
 
-</div>
-		<div id="Contact">
-			<div id="description">
-
-				<div class="w3-container w3-padding-large w3-grey">
-					<h4 id="contact"><b>Contact Me</b></h4>
-					<div class="w3-row-padding w3-center w3-padding-24" style="margin:0 -16px">
-						<div class="w3-third w3-dark-grey">
-							<p><i class="fa fa-paper-plane w3-xxlarge w3-text-light-grey"></i></p>
-							<p>clark002@colum.edu</p>
+		<div id="Voiceover">
+			<h3>Voiceover</h3>
+			<div class="voiceover-content">
+				<div class="voiceover-left">
+					<section class="audio-demos">
+						<div class="audio-item">
+							<div class="audio-controls">
+								<p>Commercial</p>
+								<button class="play-btn" data-src="audio/TaikaClark_Greg.mp3">
+									<i class="fa fa-play"></i>
+								</button>
+								<a href="audio/TaikaClark_Greg.mp3" download title="Download" class="download-btn">
+									<i class="fa fa-download"></i>
+								</a>
+							</div>
+							<audio src="audio/TaikaClark_Greg.mp3" preload="none"></audio>
 						</div>
-						<div class="w3-third w3-teal">
-							<p><i class="fa fa-map-marker w3-xxlarge w3-text-light-grey"></i></p>
-							<p>Chicago, US</p>
-						</div>
-						<div class="w3-third w3-dark-grey">
-							<p><i class="fa fa-envelope w3-xxlarge w3-text-light-grey"></i></p>
-							<p>Download Resume</p>
-						</div>
-					</div>
-					<hr class="w3-opacity">
-					<form action="/action_page.php" target="_blank">
-						<div class="w3-section">
-							<label>Name</label>
-							<input class="w3-input w3-border" type="text" name="Name" required>
-						</div>
-						<div class="w3-section">
-							<label>Email</label>
-							<input class="w3-input w3-border" type="text" name="Email" required>
-						</div>
-						<div class="w3-section">
-							<label>Message</label>
-							<input class="w3-input w3-border" type="text" name="Message" required>
-						</div>
-						<button type="submit" class="w3-button w3-black w3-margin-bottom"><i class="fa fa-paper-plane w3-margin-right"></i>Send Message</button>
-					</form>
+					</section>
 				</div>
-
-				<footer class="w3-container w3-padding-32 w3-dark-grey">
-					<div class="w3-row-padding">
-						<div class="w3-third">
-							<h3>FOOTER</h3>
-							<p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
-							<p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
-						</div>
-
-					</div>
-
-
+				
+				<div class="voiceover-right">
+					<img src="img/headshot.jpg" alt="Taika Clark Headshot" class="headshot">
+				</div>
 			</div>
 		</div>
 
-		<script src="js/script.js"></script>
+		<div id="Contact">
+			<h3>Contact Me</h3>
+			
+			<div class="contact-info">
+				<div class="info-box info-email">
+					<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+						<path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/>
+					</svg>
+					<p>clark002@colum.edu</p>
+				</div>
+				
+				<div class="info-box info-location">
+					<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+						<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+						<circle cx="12" cy="10" r="3"/>
+					</svg>
+					<p>Chicago, USA</p>
+				</div>
+				
+				<div class="info-box info-resume">
+					<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+						<rect x="3" y="3" width="18" height="18" rx="2"/>
+						<path d="M3 9h18M9 21V9"/>
+					</svg>
+					<p>Download Resume</p>
+				</div>
+			</div>
+			
+			<form class="contact-form">
+				<div class="form-row">
+					<div class="form-group">
+						<label for="name">Name</label>
+						<input type="text" id="name" name="name" required>
+					</div>
+					
+					<div class="form-group">
+						<label for="email">Email</label>
+						<input type="email" id="email" name="email" required>
+					</div>
+				</div>
+				
+				<div class="form-group">
+					<label for="message">Message</label>
+					<textarea id="message" name="message" rows="6" required></textarea>
+				</div>
+				
+				<button type="submit" class="submit-btn">
+					<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+						<path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/>
+					</svg>
+					Send Message
+				</button>
+			</form>
+		</div>
+
+		<footer>
+			<h2>FOOTER</h2>
+			<p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
+			<p class="powered">Powered by <a href="https://www.w3schools.com/w3css/" target="_blank">w3.css</a></p>
+		</footer>
+	</div>
+
+	<script>
+		document.addEventListener('DOMContentLoaded', function () {
+			const playBtns = document.querySelectorAll('.play-btn');
+			const audios = document.querySelectorAll('.audio-item audio');
+			
+			playBtns.forEach((btn, idx) => {
+				btn.addEventListener('click', () => {
+					audios.forEach((audio, aidx) => {
+						if (aidx !== idx) {
+							audio.pause();
+							audio.currentTime = 0;
+							playBtns[aidx].querySelector('i').classList.remove('fa-pause');
+							playBtns[aidx].querySelector('i').classList.add('fa-play');
+						}
+					});
+
+					const audio = audios[idx];
+					if (audio.paused || audio.ended) {
+						audio.play();
+						btn.querySelector('i').classList.remove('fa-play');
+						btn.querySelector('i').classList.add('fa-pause');
+					} else {
+						audio.pause();
+						btn.querySelector('i').classList.remove('fa-pause');
+						btn.querySelector('i').classList.add('fa-play');
+					}
+				});
+
+				audios[idx].addEventListener('ended', () => {
+					btn.querySelector('i').classList.remove('fa-pause');
+					btn.querySelector('i').classList.add('fa-play');
+				});
+			});
+		});
+	</script>
+	<script src="js/script.js"></script>
+</main>
+
 </body>
-	
-</html> 
+</html>
