@@ -147,18 +147,32 @@ ul li a:hover {
 	
 }
 
+.top-band {
+  height: 40px;          /* adjust thickness */
+  background-color: #fff;
+}
 	
 #Voiceover {
+	
+	  background-color: var(--pink);
+	  display: flex;
+	  flex-direction: column;
+		padding: 40px;
+		margin-top: 0;
+		
 		}
 
+	h3{
+		  margin: 24px 0 12px;
+		  text-align: left;		}
 	p {
-		font-family: Verdana, Tahoma, sans-serif;
+		  font-family: Verdana, Tahoma, sans-serif;
 		color: var(--cloud);
 	}
 		.audio-demos {
 			max-width: 500px;
 			margin: 0;
-			padding: 1.5em 0;
+			padding: 3em 0;
 			display: flex;
 			flex-direction: column;
 			gap: 2em;
@@ -196,7 +210,7 @@ ul li a:hover {
 		}
 
 			.play-btn:hover, .download-btn:hover {
-				background: wheat;
+				background: var(--yellow);
 				color: black;
 			}
 
@@ -206,6 +220,7 @@ ul li a:hover {
 
 		.audio-item audio {
 			width: 100%;
+			margin: 0;
 			margin-top: 0.25em;
 			outline: none;
 			accent-color: red;
@@ -216,7 +231,10 @@ ul li a:hover {
 		}
 }
 
-
+.bottom-band {
+  height: 40px;          /* adjust thickness */
+  background-color: #fff;
+}
 
 #Contact {
 		font-family: Verdana, Tahoma, sans-serif;
@@ -224,7 +242,6 @@ ul li a:hover {
 
 
 section {
-	background-color: #FF6F91;
 	display: flex;
 	flex-direction: row;
 	
