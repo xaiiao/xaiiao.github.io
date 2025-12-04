@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+	<title>Taika Clark's Portfolio Website</title>
+
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+	<script src="https://kit.fontawesome.com/dbde5275af.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+<main class='main'>
+
+<div id="Voiceover">
+			<h3>Voiceover</h3>
+			<div class="voiceover-content">
+				<div class="voiceover-left">
+					<section class="audio-demos">
+						<div class="audio-item">
+							<div class="audio-controls">
+								<p>Commercial</p>
+								<button class="play-btn" data-src="audio/TaikaClark_Greg.mp3">
+									<i class="fa fa-play"></i>
+								</button>
+								<a href="audio/TaikaClark_Greg.mp3" download title="Download" class="download-btn">
+									<i class="fa fa-download"></i>
+								</a>
+							</div>
+							<audio src="audio/TaikaClark_Greg.mp3" preload="none"></audio>
+						</div>
+					</section>
+				</div>
+				
+				<div class="voiceover-right">
+					<img src="img/headshot.jpg" alt="Taika Clark Headshot" class="headshot">
+				</div>
+			</div>
+		</div>
+
+        <script>
+		document.addEventListener('DOMContentLoaded', function () {
+			const playBtns = document.querySelectorAll('.play-btn');
+			const audios = document.querySelectorAll('.audio-item audio');
+			
+			playBtns.forEach((btn, idx) => {
+				btn.addEventListener('click', () => {
+					audios.forEach((audio, aidx) => {
+						if (aidx !== idx) {
+							audio.pause();
+							audio.currentTime = 0;
+							playBtns[aidx].querySelector('i').classList.remove('fa-pause');
+							playBtns[aidx].querySelector('i').classList.add('fa-play');
+						}
+					});
+
+					const audio = audios[idx];
+					if (audio.paused || audio.ended) {
+						audio.play();
+						btn.querySelector('i').classList.remove('fa-play');
+						btn.querySelector('i').classList.add('fa-pause');
+					} else {
+						audio.pause();
+						btn.querySelector('i').classList.remove('fa-pause');
+						btn.querySelector('i').classList.add('fa-play');
+					}
+				});
+
+				audios[idx].addEventListener('ended', () => {
+					btn.querySelector('i').classList.remove('fa-pause');
+					btn.querySelector('i').classList.add('fa-play');
+				});
+			});
+		});
+	</script>
+	<script src="js/script.js"></script>
+</main>
+
+</body>
+</html>
