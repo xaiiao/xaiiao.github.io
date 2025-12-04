@@ -13,74 +13,149 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
 	<script src="https://kit.fontawesome.com/dbde5275af.js" crossorigin="anonymous"></script>
 </head>
-
 <body>
 
-<main class='main'>
-
-<div id="Voiceover">
-			<h3>Voiceover</h3>
-			<div class="voiceover-content">
-				<div class="voiceover-left">
-					<section class="audio-demos">
-						<div class="audio-item">
-							<div class="audio-controls">
-								<p>Commercial</p>
-								<button class="play-btn" data-src="audio/TaikaClark_Greg.mp3">
-									<i class="fa fa-play"></i>
-								</button>
-								<a href="audio/TaikaClark_Greg.mp3" download title="Download" class="download-btn">
-									<i class="fa fa-download"></i>
-								</a>
-							</div>
-							<audio src="audio/TaikaClark_Greg.mp3" preload="none"></audio>
-						</div>
-					</section>
+    <header>
+        <h1>XAIIAO</h1>
+    </header>
+        
+    <nav>
+        <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="voiceover.html">Voiceover</a></li>
+        <li><a href="#link2">Portfolio</a></li>
+        </ul>
+    </nav>
+        
+    <div id="content">
+        
+    <div id="sidebar">
+        <div id="avatar">
+            <img src="img/headshot6.jpg" alt="my headshot!">
+        </div>
+        
+        <div id="bio">
+            <p>Hey! <br> My name is Taika.<br>
+                I do game art & VO.</p>
+        </div>
+        
+        <ul>
+            <li><a href="https://www.instagram.com/xaii.ao/">Instagram</a></li>
+            <li><a href="https://www.artstation.com/xaiiao">ArtStation</a></li>
+            <li><a href="https://www.linkedin.com/in/taika-clark">LinkedIn</a></li>
+        </ul>
+    </div>
+        
+    <main>
+        
+        <h1>Voiceover</h1>
+        <!--marquee is supposedly not supported anymore and there are alternatives, but it works for me so whatever...-->
+        <marquee>nyan nyan nyanyan nyanyanyanyan nyanyan nyan nyan nyanyanyanyanyanyanyanyanyanyanyanyanyanya</marquee>
+        
+        <div class="mews">
+                    <!-- Audio Demo Buttons -->
+			<section class="audio-demos">
+				<div class="audio-item">
+					<p class="demo-label">Commercial</p>
+					<div class="button-container">
+						<button class="play-btn" data-src="audio/TaikaClark_Greg.mp3">
+							<i class="fa fa-play"></i>
+						</button>
+							<a href="audio/TaikaClark_Greg.mp3" download="audio/TaikaClark_Greg.mp3" class="download-btn">
+								<i class="fa fa-download"></i>
+							</a>
+						</button>
+					</div>
 				</div>
-				
-				<div class="voiceover-right">
-					<img src="img/headshot.jpg" alt="Taika Clark Headshot" class="headshot">
-				</div>
-			</div>
-		</div>
+        </section>
+        
+        <!-- Main Audio Player -->
+        <div class="main-player">
+            <audio id="mainAudioPlayer" controls>
+                <source src="" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+    </div>
+    
+    <script>
+        // Download function
+			function downloadAudio(url, filename) {
+				const link = document.createElement('a');
+				link.href = url;
+				link.download = filename;
+				link.target = '_blank'; // Open in new context
+				link.rel = 'noopener noreferrer';
+				document.body.appendChild(link);
+				link.click();
+				document.body.removeChild(link);
+			}
+					
+        // Audio player functionality
+        document.addEventListener('DOMContentLoaded', function () {
+            const playBtns = document.querySelectorAll('.play-btn');
+            const audioPlayer = document.getElementById('mainAudioPlayer');
+            let currentBtn = null;
 
-        <script>
-		document.addEventListener('DOMContentLoaded', function () {
-			const playBtns = document.querySelectorAll('.play-btn');
-			const audios = document.querySelectorAll('.audio-item audio');
-			
-			playBtns.forEach((btn, idx) => {
-				btn.addEventListener('click', () => {
-					audios.forEach((audio, aidx) => {
-						if (aidx !== idx) {
-							audio.pause();
-							audio.currentTime = 0;
-							playBtns[aidx].querySelector('i').classList.remove('fa-pause');
-							playBtns[aidx].querySelector('i').classList.add('fa-play');
-						}
-					});
+            playBtns.forEach(btn => {
+                btn.addEventListener('click', function () {
+                    const src = btn.getAttribute('data-src');
+                    
+                    // If clicking a different demo
+                    if (currentBtn && currentBtn !== btn) {
+                        currentBtn.querySelector('i').classList.remove('fa-pause');
+                        currentBtn.querySelector('i').classList.add('fa-play');
+                    }
+                    
+                    // If switching to new audio
+                    if (!audioPlayer.src.includes(src)) {
+                        audioPlayer.src = src;
+                        audioPlayer.play();
+                        btn.querySelector('i').classList.remove('fa-play');
+                        btn.querySelector('i').classList.add('fa-pause');
+                        currentBtn = btn;
+                    } 
+                    // Toggle play/pause on same audio
+                    else {
+                        if (audioPlayer.paused) {
+                            audioPlayer.play();
+                            btn.querySelector('i').classList.remove('fa-play');
+                            btn.querySelector('i').classList.add('fa-pause');
+                        } else {
+                            audioPlayer.pause();
+                            btn.querySelector('i').classList.remove('fa-pause');
+                            btn.querySelector('i').classList.add('fa-play');
+                        }
+                        currentBtn = btn;
+                    }
+                });
+            });
 
-					const audio = audios[idx];
-					if (audio.paused || audio.ended) {
-						audio.play();
-						btn.querySelector('i').classList.remove('fa-play');
-						btn.querySelector('i').classList.add('fa-pause');
-					} else {
-						audio.pause();
-						btn.querySelector('i').classList.remove('fa-pause');
-						btn.querySelector('i').classList.add('fa-play');
-					}
-				});
+            // Sync button with player controls
+            audioPlayer.addEventListener('play', function() {
+                if (currentBtn) {
+                    currentBtn.querySelector('i').classList.remove('fa-play');
+                    currentBtn.querySelector('i').classList.add('fa-pause');
+                }
+            });
 
-				audios[idx].addEventListener('ended', () => {
-					btn.querySelector('i').classList.remove('fa-pause');
-					btn.querySelector('i').classList.add('fa-play');
-				});
-			});
-		});
-	</script>
-	<script src="js/script.js"></script>
-</main>
+            audioPlayer.addEventListener('pause', function() {
+                if (currentBtn) {
+                    currentBtn.querySelector('i').classList.remove('fa-pause');
+                    currentBtn.querySelector('i').classList.add('fa-play');
+                }
+            });
 
-</body>
+            // Reset icon when audio ends
+            audioPlayer.addEventListener('ended', function () {
+                if (currentBtn) {
+                    currentBtn.querySelector('i').classList.remove('fa-pause');
+                    currentBtn.querySelector('i').classList.add('fa-play');
+                }
+            });
+        });
+    </script>
+</main>     
+    <footer>© 2025 Taika Clark</footer>
+    </body>
 </html>

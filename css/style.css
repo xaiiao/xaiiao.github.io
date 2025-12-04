@@ -1,62 +1,78 @@
-:root{
-    --header-bg: url('../img/website bg.jpg');
-    
-    --hoverblue: #66B3B0;
-    --volcano: #3B2F31;
+:root {
+    --header-bg: url(../img/background.jpg);
+    --header-bg-color: #f0f9fd;
+    --accent-color: #9BD8F4;
+    --link-color: #784D98;
+    --bg-color: #f0f9fd;
+    --bg-color2: #5E5250;
+    --text-color: #3D363A;
+    --header-text: #BAF9A0;
 
-    --dot-bg: black;
-    --dot-color: white;
+    --stripe-color: #f0f9fd;
+    --stripe-color2: #B0E5FF;
 }
 
-*{
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
-    color:var(--volcano);
 
-    scrollbar-color: var(--hoverblue);
+* {
+    color: var(--text-color);
+    font-family:Georgia, 'Times New Roman', Times, serif;
+
+    scrollbar-color: var(--text-color) var(--stripe-color2);
     scrollbar-width: thin;
 }
 
-::selection{
-    background: blueviolet;
-    color:aqua;
+/* this is for when you select text on the page */
+::selection {
+    background: var(--accent-color);
+    color: var(--bg-color);
 }
 
-body{
-/* https://codepen.io/edmundojr/pen/xOYJGw/ */
-  --dot-size: 1px;
-  --dot-space: 22px;
-	background:
+body {
+    /* dot bg: https://codepen.io/edmundojr/pen/xOYJGw
+     */
+    --dot-bg: black;
+    --dot-color: white;
+    --dot-size: 1px;
+    --dot-space: 22px;
+        background:
 		linear-gradient(90deg, var(--dot-bg) calc(var(--dot-space) - var(--dot-size)), transparent 1%) center / var(--dot-space) var(--dot-space),
 		linear-gradient(var(--dot-bg) calc(var(--dot-space) - var(--dot-size)), transparent 1%) center / var(--dot-space) var(--dot-space),
 		var(--dot-color);
 }
-
+/* i think having better line spacing helps text to be more readable, but you can remove it if you want */
 p {line-height: 1.5em;}
 
-header{
+header {
+    background-color: var(--accent-color);
+    background-image: var(--header-bg);
+    background-size:50%;
 
-    background-color:blue;
-    background-image:var(--header-bg);
     background-position: 75%;
-    background-repeat:no-repeat;
-
-    min-height:200px;
+    background-repeat: no-repeat;
+/* change the minimum height if you want it to take up more/less space */
+    min-height: 200px;
     margin: 0 auto;
     padding-top: 10px;
-
-    text-align:center; 
-
+/* you can change the text-align to center or right if you want it placed differently */
+    text-align: center;
 }
 
+/* this is your site title displayed at the top of the page */
 header > h1 {
-
     margin: 20px auto;
     max-width: 1080px;
     width: fit-content;
     padding: 12px;
+
+    color:var(--stripe-color);
+        text-shadow: 
+        -2px -2px 0 var(--text-color),
+            2px -2px 0 var(--text-color),
+        -2px 2px 0 var(--text-color),
+            2px 2px 0 var(--text-color);
 }
 
-nav{
+nav {
     font-weight: bold;
 }
 
@@ -65,137 +81,214 @@ nav > ul {
     margin: auto;
     line-height: 3rem;
 
+/* this stuff makes it wrap around on mobile */
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
 
+/* this line takes away the dot in front of the list items */
     list-style-type: none;
+
+/* list items have default padding but we don't need it for these */
     padding-left: 0;
     
+/* and this spaces out the buttons so they're not touching */
     justify-content: space-evenly;
 }
-
 nav li {
     text-align: center;
 }
-
 nav li > a {
-    background-color: red;
-    color: orange;
-    padding: .2m 3em;
-
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+    padding: .2em 3em;
+/* this takes away the link underline */
     text-decoration: none;
 }
-
-nav li >a:hover{
-    background-color: var(--hoverblue);
+nav li > a:hover {
+    background-color: var(--bg-color);
 }
 
-a{
-    color: yellowgreen;
+a {
+    color: var(--link-color);
     font-weight: bold;
 }
-
-a:visited{
-    color: brown;
+a:visited {
+    color: var(--text-color);
 }
-a:hover{
-    color: var(--hoverblue)
+a:hover {
+    color: var(--accent-color);
 }
 
-ul{
+/* you can change this to anything you want :) */
+ul { 
     list-style-type: circle;
 }
 
-marquee{
-    display:block;
+marquee {
+    display: block;
     margin: 0;
-    background-color: bisque;
+    background-color: var(--stripe-color2);
 }
 
-#sidebar{
-    background-color:violet;
-    max-width: 120px;
+#sidebar {
+    background-color: var(--bg-color);
+    max-width: 160px;
     margin: 1em;
-    padding:1em;
-    border: 2px solid var(--volcano);
-    box-shadow: var(--hoverblue) 4px 4px;
+    padding: 1em;
+    border: 2px solid var(--text-color);
+    box-shadow: var(--accent-color) 4px 4px;
 }
 
-#sidebar ul{
+#sidebar ul {
     padding-left: 0;
     margin: 1em;
 }
 
-#headshot{
+#avatar {
     margin: .5em auto;
     text-align: center;
 }
-
-#headshot img{
-    background: var(--dot-color);
+#avatar img {
+    background: var(--stripe-color);
     width: 100%;
-    border: 2px solid var(--volcano);
+    border: 2px solid var(--text-color);
 }
 
 #bio {
-    background: red;
-    border: 2px solid var(--volcano);
+    background: var(--stripe-color2);
+    border: 2px solid var(--text-color);
 }
+#bio p { margin: .8em; }
 
-bio p {margin: .8em;}
-
-#content{
-    display:flex;
+#content {
+    display: flex;
     max-width: 1080px;
     margin: auto;
 }
 
-main{
-    background-color: bisque;
-    box-shadow: grey 4px 4px;
+main {
+    background-color: var(--bg-color);
+    box-shadow: var(--accent-color) 4px 4px;
     margin: 1em;
     padding-bottom: 1em;
-    border: 32px solid var(--volcano);
+    border: 32px solid var(--text-color);
 
+/*remove these lines if you dont want the scrollbar*/
     max-height: 420px;
     overflow: auto;
 }
 
-main h1{
+main h1 {
     text-align: center;
 }
 
-main>h1,
-main>h2,
-main>h3{
-
-    background: violet;
+main > h1,
+main > h2,
+main > h3 {
+    background-color: var(--accent-color);
     padding: .2em .5em;
     margin: 0;
 }
 
-.aboutMe{
+.mews {
     padding: 0 1em;
 }
 
-.center {text-align: center;}
+/* a class for centering text and images */
+.center { text-align: center; }
 
-footer{
+/* Voiceover Demo Styles */
+.demo-title {
+    text-align: center;
+    color: var(--text-color);
+    margin: 1.5em 0 1em 0;
+    font-size: 1.5em;
+}
+
+.audio-demos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1em;
+    padding: 1em;
+    margin-bottom: 1.5em;
+}
+
+.audio-item {
+    background: var(--stripe-color);
+    border: 2px solid var(--text-color);
+    border-radius: 10px;
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8em;
+    box-shadow: var(--accent-color) 3px 3px;
+}
+
+.demo-label {
+    font-style: italic;
+    font-weight: bold;
+    color: var(--text-color);
+    margin: 0;
+    text-align: center;
+}
+
+/* Container for buttons to be side by side */
+.button-container {
+    display: flex;
+    gap: 1em;
+    align-items: center;
+}
+
+.play-btn, .download-btn {
+    background: var(--accent-color);
+    border: 2px solid var(--text-color);
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    color: var(--bg-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.2s;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.play-btn:hover, .download-btn:hover {
+    background: var(--text-color);
+    color: var(--bg-color);
+    transform: scale(1.1);
+}
+
+.main-player {
+    background: var(--stripe-color2);
+    border: 2px solid var(--text-color);
+    padding: 1em;
+    border-radius: 8px;
+    margin: 0 1em 1em 1em;
+}
+
+.main-player audio {
+    width: 100%;
+    outline: none;
+}
+
+
+footer {
     text-align: center;
     font-size: small;
     margin: 1em auto;
     max-width: 960px;
 }
 
-/* INTERACTIVE ELEMENTS */
-
-@media only screen and (max-width: 800px){
-    #content{
+/* these are the mobile styles! */
+@media only screen and (max-width: 800px) {
+    #content {
         flex-wrap: wrap;
     }
-
-    #sidebar{
+    #sidebar {
         width: 100%;
         display: flex;
         flex-wrap: wrap;
@@ -204,42 +297,50 @@ footer{
         border: none;
         margin: 0;
     }
-
-    header{
+    header {
         min-height: 300px;
         background-position: bottom;
     }
-    header > h1 {
+    header > h1 { 
         margin: .4em;
     }
-
-    nav > ul{
+    .white-bg {
+        margin: 1em;
+    }
+    nav > ul {
+    /* this stuff makes it wrap around on mobile */
         display: flex;
         flex-wrap: wrap;
         flex-direction: row;
     }
-
-    #headshot{
+    #avatar {
         margin: 0 1em;
         max-width: 120px;
     }
-
     #bio {width: 50%;}
-    main{margin: 0; max-height: fit-content;}
-
+    main {
+        margin: 0;
+    /* remove scrollbar for mobile */
+        max-height: fit-content;
+    }
     #sidebar {
         max-width: 100%;
     }
-    #sidebar ul {
+    #sidebar ul {   
         margin: 0 1em;
         display: flex;
         flex-wrap: wrap;
         flex-direction: row;
         line-height: 2em;
     }
-    
-    footer{
+    #sidebar li {
+        padding-left: 0;
+        margin: .3em 1em;
+    }
+    .audio-demos {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+    footer {
         margin: 1em;
     }
-
 }
