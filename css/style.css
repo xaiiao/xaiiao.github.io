@@ -19,6 +19,8 @@
 
     scrollbar-color: var(--text-color) var(--stripe-color2);
     scrollbar-width: thin;
+
+      box-sizing: border-box;
 }
 
 /* this is for when you select text on the page */
@@ -199,6 +201,10 @@ main > h3 {
 .center { text-align: center; }
 
 /* Voiceover Demo Styles */
+.voiceover-page main {
+    max-height: 600px; /* or whatever height you prefer */
+}
+
 .demo-title {
     text-align: center;
     color: var(--text-color);
@@ -276,11 +282,75 @@ main > h3 {
 }
 
 
+/* Contact Form Styles */
+form {
+    max-width: 100%;
+    padding: 20px;
+}
+
+.form-row {
+    display: flex;
+    gap: 2em;
+    margin-bottom: 1em;
+}
+
+.form-left {
+    flex: 1;
+}
+
+.form-right {
+    flex: 1;
+}
+
+form label {
+    display: block;
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+    font-weight: bold;
+}
+
+.form-right label {
+    margin-top: 1em;
+}
+
+form input[type="text"],
+form input[type="email"],
+form textarea {
+    width: 100%;
+    padding: 0.8em;
+    border: 2px solid var(--text-color);
+    background-color: var(--bg-color);
+    box-sizing: border-box;
+}
+
+form textarea {
+    height: 40%;
+    min-height: 200px;
+}
+
+form input[type="submit"] {
+    margin-top: 1em;
+    padding: 0.8em 2em;
+    background-color: var(--accent-color);
+    color: var(--text-color);
+    border: 2px solid var(--text-color);
+    cursor: pointer;
+    font-weight: bold;
+    width: 100%;
+}
+
+form input[type="submit"]:hover {
+    background-color: var(--text-color);
+    color: var(--bg-color);
+}
+
+
 footer {
     text-align: center;
     font-size: small;
     margin: 1em auto;
     max-width: 960px;
+    color:var(--stripe-color);
 }
 
 /* these are the mobile styles! */
@@ -339,6 +409,14 @@ footer {
     }
     .audio-demos {
         grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+
+    .form-row {
+        flex-direction: column;
+    }
+    
+    form textarea {
+        min-height: 170px;
     }
     footer {
         margin: 1em;

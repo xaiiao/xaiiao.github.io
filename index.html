@@ -23,7 +23,7 @@
         <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="voiceover.html">Voiceover</a></li>
-        <li><a href="#link2">Portfolio</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
         </ul>
     </nav>
         
@@ -35,8 +35,8 @@
         </div>
         
         <div id="bio">
-            <p>Hey! <br> My name is Taika.<br>
-                I do game art & VO.</p>
+            <p>webmaster: Taika<br>
+            pronouns: he/they</p>
         </div>
         
         <ul>
@@ -48,7 +48,7 @@
         
     <main>
         
-        <h1>🐱 welcomeow 🐱</h1>
+        <h1>Taika Clark</h1>
         <!--marquee is supposedly not supported anymore and there are alternatives, but it works for me so whatever...-->
         <marquee>nyan nyan nyanyan nyanyanyanyan nyanyan nyan nyan nyanyanyanyanyanyanyanyanyanyanyanyanyanya</marquee>
         
@@ -81,11 +81,30 @@
             </div>
         </div>
         
-        <h2>credits</h2>
+        <h2>contact me</h2>
         <div class="mews">
-            <p>template by <a href="https://nomnomnami.com">NomnomNami</a>!</p>
-            <p>i mostly learned css by playing with <a href="https://goblin-heart.net/sadgrl/projects/layout-builder/" target="_blank">sadgrl's layout builder</a> and looking up stuff i didn't know... you can learn too!!! good luck!!!!!!</p>
-            <small>last update: 9/28/2024</small>
+            <div class="column">
+                <form action="https://formspree.io/f/xwpgqokd" method="POST">
+                    <div class="form-row">
+                        <div class="form-left">
+                            <label for="fname">First Name:</label>
+                            <input type="text" id="fname" name="firstname" placeholder="Your name.." required>
+                            
+                            <label for="lname">Last Name:</label>
+                            <input type="text" id="lname" name="lastname" placeholder="Your last name.." required>
+                            
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" name="email" placeholder="Your email.." required>
+                        </div>
+                        
+                        <div class="form-right">
+                            <label for="subject">Subject:</label>
+                            <textarea id="subject" name="subject" placeholder="Write something.." required></textarea>
+                            <input type="submit" value="Submit">
+                        </div>
+                    </div>
+                </form>
+            </div>
         </div>
         
     </main>
