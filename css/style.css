@@ -227,7 +227,7 @@ main > h3 {
 
 .audio-item {
     background: var(--stripe-color);
-    width: 480px;
+    max-width: 100%;
     border: 2px solid var(--text-color);
     border-radius: 10px;
     padding: 0.8em 1.2em;
@@ -275,7 +275,7 @@ main > h3 {
 }
 
 .main-player {
-    width: 960px;
+    max-width: 100%;
     background: var(--stripe-color2);
     border: 2px solid var(--text-color);
     padding: 1em;
@@ -284,7 +284,7 @@ main > h3 {
 }
 
 .main-player audio {
-    width: 920px;
+    width: 100%;
     outline: none;
 }
 
@@ -386,7 +386,6 @@ footer {
         margin: 1em;
     }
     nav > ul {
-    /* this stuff makes it wrap around on mobile */
         display: flex;
         flex-wrap: wrap;
         flex-direction: row;
@@ -398,7 +397,6 @@ footer {
     #bio {width: 50%;}
     main {
         margin: 0;
-    /* remove scrollbar for mobile */
         max-height: fit-content;
     }
     #sidebar {
@@ -416,17 +414,33 @@ footer {
         margin: .3em 1em;
     }
 
+    /* Voiceover mobile styles */
+    .audio-demos {
+        padding: 0.5em;
+    }
+
     .audio-item {
+        width: 100%;
         flex-direction: column;
         text-align: center;
         gap: 0.8em;
+        padding: 0.8em;
     }
     
     .demo-label {
         text-align: center;
     }
-}
 
+    .main-player {
+        margin: 0 0.5em 1em 0.5em;
+        padding: 0.5em;
+    }
+
+    .main-player audio {
+        width: 100%;
+    }
+
+    /* Form mobile styles */
     .form-row {
         flex-direction: column;
     }
@@ -434,6 +448,7 @@ footer {
     form textarea {
         min-height: 170px;
     }
+    
     footer {
         margin: 1em;
     }
