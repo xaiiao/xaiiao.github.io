@@ -376,7 +376,7 @@ footer {
         margin: 0;
     }
     header {
-        min-height:fit-content;
+        min-height:50px;
         background-position: bottom;
     }
     header > h1 { 
